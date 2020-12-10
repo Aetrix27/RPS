@@ -21,11 +21,22 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? ResultsViewController
         switch segue.identifier {
-        case "rockSelected":
+        case "Rock":
             vc?.userSelection = GameOption.rock
-        default:
+        case "Paper":
+            vc?.userSelection = GameOption.paper
+        case "Scissors":
+            vc?.userSelection = GameOption.scissors
+        case .none:
+            break
+        case .some(_):
             break
         }
+    }
+    
+    
+    @IBAction func unwindToPlay(segue : UIStoryboardSegue){
+        
     }
     
     
